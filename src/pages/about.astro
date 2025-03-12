@@ -14,6 +14,8 @@ const goal = 3;
 const skillColor = "navy";
 const fontWeight = "bold";
 const textCase = "uppercase";
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 ---
 <html lang="en">
@@ -34,9 +36,7 @@ import '../styles/global.css';
     </style>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <Navigation />
     <h1>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 
@@ -56,10 +56,11 @@ import '../styles/global.css';
 <ul>
   {skills.map((skill) => <li class="skill">{skill}</li>)}
 </ul>
-{happy && <p>I am happy to be learning Astro!</p>}
+      {happy && <p>I am happy to be learning Astro!</p>}
 
-{finished && <p>I finished this tutorial!</p>}
+      {finished && <p>I finished this tutorial!</p>}
 
-{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+      {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+    <Footer />
   </body>
 </html>
